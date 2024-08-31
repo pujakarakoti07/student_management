@@ -1,1 +1,1 @@
-#Student Management System with basic CRUD application
+Student Management System with basic CRUD application
