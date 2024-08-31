@@ -3,18 +3,16 @@ package com.example.student.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jdk.jfr.DataAmount;
-import lombok.Data;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 import org.springframework.stereotype.Component;
 
-@Data
+
 @Entity
 @Component
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private int id;
     private String name;
     private long contact;
     private String address;
@@ -36,11 +34,11 @@ public class Student {
         this.contact = contact;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -59,8 +57,8 @@ public class Student {
     public void setPincode(Integer pincode) {
         this.pincode = pincode;
     }
-
-    public Student(Integer id, String name, long contact, String address, Integer pincode) {
+    public Student(){}
+    public Student(int id, String name, long contact, String address, Integer pincode) {
         this.id = id;
         this.name = name;
         this.contact = contact;

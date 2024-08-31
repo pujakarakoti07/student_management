@@ -5,6 +5,7 @@ import com.example.student.repo.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,4 +21,14 @@ public class StudentService {
         Optional<Student> student1 = repo.findById(id);
         return student1;
     }
+    public List<Student> getStudent() {
+        return repo.findAll();
+    }
+
+    public List<Student> getAllStudents() {
+        List<Student> students = repo.findAll();
+        return students;
+    }
+
+
 }
