@@ -4,6 +4,7 @@ import com.example.student.model.Student;
 import com.example.student.repo.StudentRepo;
 import com.example.student.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,8 +40,8 @@ public class StudentController {
                     return null;
                 });
     }
-    @PutMapping("/Student/update")
-    public void updateStudent(@RequestBody int id){
-        service.UpdateStudent(id);
+    @PutMapping("/students/{id}")
+    public void updateStudent(@PathVariable int id, @RequestBody Student updatedStudent) {
+        service.UpdateStudent(id,updatedStudent);
     }
 }
